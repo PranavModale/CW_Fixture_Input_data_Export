@@ -1,0 +1,31 @@
+<plugin>
+   <extension point="org.eclipse.ui.commands">
+      <command
+            id="com.custom.exportfixture.command"
+            name="Export Fixture Data to Excel"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.custom.exportfixture.command"
+            class="Handler.ExportFixtureCommandHandler"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="com.custom.exportfixture.command"
+               label="Export Fixture Data to Excel"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <with variable="selection">
+                  <count value="1"/>
+                  <iterate ifEmpty="false">
+                     <adapt type="com.teamcenter.rac.kernel.TCComponentItemRevision"/>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+</plugin>
