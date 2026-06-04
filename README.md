@@ -1,1 +1,3 @@
 # CW_Fixture_Input_data_Export
+An export code which will export the Teamcenter Property values of Fixture Assembly Revision into the excel template which has already their own format with label and values will be placed infront of label in blank space. There is separate code function for the checkboxed value and this code will work for all objects in the teamcenter which are mentioned in the code. (If you want to change object you have to change in the service packages)
+It will only work on Fixture Assembly Revision object, If you try on another revision then it'll throw ann error.
